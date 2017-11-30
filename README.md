@@ -1,4 +1,4 @@
-# Chart JS - Proof of Concepts
+# Chart JS - Proof of Concept
 - Simple yet flexible JavaScript charting for designers & developers
 - Types of charts: bar, radar, doughnut, pie, bar, horizontalBar, line, polarArea
 
