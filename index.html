@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Charts JS - Salary Boilerplate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Skeleton CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>
+            Charts JS - Salary Boilerplate
+        </h3>
+        <hr />
+
+        <!-- body content -->
+        <canvas id="myChart1"></canvas>
+        <hr />
+        <div class="sixteen columns">
+            <div class="six columns offset-by-three">
+                <div id="footer">
+                    https://github.com/MohammedDeveloper &lrm; | All Right Reserved
+                </div>
+            </div>
+        </div> 
+        <!-- ./body content -->
+        <div class="row">
+                      
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        /// get the chart id and contect
+        let myChart1 = document.getElementById('myChart1').getContext('2d');
+
+        /// set the chart properties
+        let chartPropsLocal = {
+            type: "bar", /// radar, doughnut, pie, bar, horizontalBar, line, polarArea
+            data: {
+                labels: ["Architect", "Senior Developer", "Technical Lead", "Developer", "Senior Architect"],
+                datasets: [{
+                    label: "Salary by role/year (USD)",
+                    data: [95800, 73500, 86000, 59600, 112000],
+                    backgroundColor: [
+                        "#0275d8",
+                        "#5cb85c",
+                        "#5bc0de",
+                        "#f0ad4e",
+                        "#d9534f"
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#eee',
+                    hoverBorderWidth: 1,
+                    hoverBorderColor: '#efefef'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Salary by role/year (USD)",
+                    fontSize: 21,
+                    fontFamily: "Calibri"
+                },
+                legend: {
+                    position: "right",
+                    display: true
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        top: 10,
+                        right: 0,
+                        bottom: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true,
+                    mode: 'point',
+                    titleFontSize: 14,
+                    bodyFontSize: 12
+                }
+            }
+        };
+
+        /// set the chart GLOBAL properties
+        Chart.defaults.global.defaultFontFamily = "Segoe UI";
+        Chart.defaults.global.defaultFontColor = "#777";
+        Chart.defaults.global.defaultFontSize = 18;
+
+        /// set the chart object - horizontalBar
+        //chartPropsLocal.type = "horizontalBar";
+        //chartPropsLocal.options.legend.display = false;
+        //let salaryPieChart = new Chart(myChart1, chartPropsLocal);
+                
+        /// set the chart object - pie
+        chartPropsLocal.type = "pie";
+        chartPropsLocal.options.legend.display = true
+        let salaryPieChart = new Chart(myChart1, chartPropsLocal);
+
+        /// set the chart object - Bar
+        //chartPropsLocal.type = "bar";
+        //chartPropsLocal.options.legend.display = false;
+        //let salaryBarChart = new Chart(myChart1, chartPropsLocal);
+        
+    </script>
+</body>
+</html>
